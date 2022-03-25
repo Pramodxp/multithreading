@@ -1,8 +1,10 @@
-package com.pramod;
+package com.pramod.creation.example1;
 
+/**
+ * @author pramodr
+ *
+ */
 public class Main1 {
-	
-	
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -11,25 +13,11 @@ public class Main1 {
 
 			@Override
 			public void run() {
-//				System.out.println("we are now in thread : " + Thread.currentThread().getName());
-//				System.out.println("Current Thread priority is : " + Thread.currentThread().getPriority());
-
-				throw new RuntimeException("Internal Exception");
+				System.out.println("we are now in thread : " + Thread.currentThread().getName());
+				System.out.println("Current Thread priority is : " + Thread.currentThread().getPriority());
 			}
-		});
-		
-//-------------------------------------------------------------------------------------------
-		// handler for the thread, if the exception or error has been not caught the
-		// handler will handle.
-		thread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 
-			@Override
-			public void uncaughtException(Thread t, Throwable e) {
-				System.out.println(
-						"A cretical Error happened in thread : " + thread.getName() + " Error is " + e.getMessage());
-			}
 		});
-//-------------------------------------------------------------------------------------------
 
 		thread.setName("New Worker Thread");
 
