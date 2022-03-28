@@ -13,7 +13,5 @@ public class Main {
 		public void run() {
 			System.out.println("Hello from : " + this.getName());
 		}
-
 	}
-
 }
